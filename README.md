@@ -1,16 +1,15 @@
-# newsfact
+<p align="center">
+  <a href="https://github.com/j-fbriere/squawker">
+    <img alt="Logo" title="Logo" src="android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="144">
+  </a>
+</p>
+<h1 align="center">NewsFact</h1>
+<p align="center">
+  A modern way to view your feeds
+</p>
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <a href="https://github.com/mrhcjones/NewsFact/releases" alt="GitHub release"><img src="https://img.shields.io/github/release/mrhcjones/NewsFact.svg" ></a>
+  <a href="https://github.com/mrhcjones/NewsFact/blob/master/LICENSE" alt="License: GPL v3"><img src="https://img.shields.io/badge/License-GPL_v3-blue.svg"></a>
+  <a href="https://github.com/mrhcjones/NewsFact/actions" alt="Build Status"><img src="https://img.shields.io/github/actions/workflow/status/mrhcjones/NewsFact/ci.yml"></a>
+</p>
