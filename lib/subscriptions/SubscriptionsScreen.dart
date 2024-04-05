@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsfact/addFeed/AddDialog.dart';
+import 'package:newsfact/subscriptions/_add.dart';
 import 'package:newsfact/subscriptions/_list.dart';
 
 class FeedsScreen extends StatefulWidget {
@@ -11,7 +11,7 @@ class FeedsScreenState extends State<FeedsScreen> {
     return Scaffold(
       appBar: AppBar(title: Text("Subscriptions"), leading: Icon(Icons.subscriptions),),
       body: FeedsList(),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add_rounded), onPressed: () => AddDialog(context)),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add_rounded), onPressed: () => addDialog(context)),
     );
   }
 }
