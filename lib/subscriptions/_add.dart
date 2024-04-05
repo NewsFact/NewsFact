@@ -119,7 +119,7 @@ class _SocialImportState extends State<SocialImport> {
         id: feeds.length + 1,
         url: _instanceURL.text.isNotEmpty
             ? "$_instanceURL/${_screenName.text}/rss"
-            : "https://nitter.poast.org/${_screenName.text}/rss",
+            : "https://nitter.privacydev.net/${_screenName.text}/rss",
         name: "@${_screenName.text}",
         image: "https://twitter.com/favicon.ico",
       ),
