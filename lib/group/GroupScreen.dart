@@ -4,13 +4,17 @@ import 'package:newsfact/card/card.dart';
 import 'package:newsfact/dataStore/database_classes.dart';
 import 'package:universal_feed/universal_feed.dart';
 
-class FeedView extends StatelessWidget {
+class GroupScreen extends StatelessWidget {
   final Uri feedUri;
+  final String title;
+  final ScrollController? scrollController;
 
-  const FeedView({super.key, required this.feedUri});
+  const GroupScreen({super.key, required this.title, required this.feedUri, this.scrollController});
   
   Widget build(BuildContext context) {
-  return FutureBuilder<UniversalFeed?>(
+  return Scaffold(
+    appBar: AppBar(title: Text(title), actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward))],),
+    body: FutureBuilder<UniversalFeed?>(
         future: getFeed(feedUri),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -25,6 +29,7 @@ class FeedView extends StatelessWidget {
 
             if (rssFeed != null) {
               return ListView.builder(
+                controller: scrollController,
                 itemCount: rssFeed.items.length,
                 itemBuilder: (BuildContext c, int index) {
                   var item = rssFeed.items[index];
@@ -44,6 +49,6 @@ class FeedView extends StatelessWidget {
             }
           }
         },
-      );  
+      ));  
   }
 }

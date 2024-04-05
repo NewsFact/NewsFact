@@ -18,40 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'NewsFact',
       theme: ThemeData(colorScheme: lightDynamic,),
       darkTheme: ThemeData(colorScheme: darkDynamic,),
-      home: const MyHomePage(title: 'NewsFact'),
+      home: HomeScreen(),
     );
     });
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-   int pageIndex = 0;
-  final List<Widget> _pages = [//HomeScreen(), 
-  FeedsScreen(), SavedScreen()];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[pageIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: pageIndex,
-        destinations: const [
-          //NavigationDestination(selectedIcon: Icon(Icons.home), icon: Icon(Icons.home_outlined), label: "Home",), 
-          NavigationDestination(selectedIcon: Icon(Icons.subscriptions), icon: Icon(Icons.subscriptions_outlined), label: "Subscriptions",),
-          NavigationDestination(selectedIcon: Icon(Icons.bookmark), icon: Icon(Icons.bookmark_outline,), label: "Saved",)
-        ],
-        onDestinationSelected: (value) => setState(() {
-          pageIndex = value;
-        }),
-      ),
-    );
   }
 }

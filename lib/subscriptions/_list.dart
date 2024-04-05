@@ -3,7 +3,7 @@ import 'package:favicon/favicon.dart';
 import 'package:flutter/material.dart';
 import 'package:newsfact/dataStore/database_classes.dart';
 import 'package:newsfact/dataStore/database_helper.dart';
-import 'package:newsfact/feed/_list.dart';
+import 'package:newsfact/group/GroupScreen.dart';
 import 'package:newsfact/utils/favicon.dart';
 
 class FeedsList extends StatefulWidget {
@@ -35,7 +35,7 @@ class FeedsListState extends State<FeedsList> {
                       FeedsHelper.deleteFeed(e.id);
                     },child: ListTile(title: Text(e.name.toString()),
           leading: FaviconImage(e.url),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext c) {return Scaffold(appBar: AppBar(title: Text(e.name ?? "")), body: FeedView(feedUri: Uri.parse(e.url)));})),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext c) => GroupScreen(title: e.name!, feedUri: Uri.parse(e.url), scrollController: ScrollController(),))),
           ),)
             ).toList(),
         );
