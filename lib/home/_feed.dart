@@ -23,7 +23,7 @@ class FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
         List<Feed> feeds = snapshot.data;
         if (feeds.isEmpty == false)
         {
-          return GroupScreen(title: 'Feed', feedUri: Uri.parse(feeds[0].url.toString()), scrollController: widget.scrollController);
+          return GroupScreen(title: 'Feed', feeds: feeds.map((e) => Uri.parse(e.url)).toList(), scrollController: widget.scrollController);
         } else {
           return Center(child: Text("No feeds found"),);
         }

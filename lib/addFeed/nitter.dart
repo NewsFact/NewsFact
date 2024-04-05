@@ -18,7 +18,7 @@ class TwitterScreenState extends State<TwitterScreen> {
   String? screenName;
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Import from Nitter"),),
+      appBar: AppBar(title: Text("Import from Twitter"),),
       body: Padding(padding: EdgeInsets.all(8),child: Column(
         children: [
           TextField(controller: _instanceURL, decoration: InputDecoration(label: Text("Instance URL"), prefixText: "https://", border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)), suffixIcon: IconButton(onPressed: () async{         

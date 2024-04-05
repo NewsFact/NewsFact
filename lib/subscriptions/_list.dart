@@ -35,7 +35,7 @@ class FeedsListState extends State<FeedsList> {
                       FeedsHelper.deleteFeed(e.id);
                     },child: ListTile(title: Text(e.name.toString()),
           leading: FaviconImage(e.url),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext c) => GroupScreen(title: e.name!, feedUri: Uri.parse(e.url), scrollController: ScrollController(),))),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (BuildContext c) => GroupScreen(title: e.name!, feeds: [Uri.parse(e.url)], scrollController: ScrollController(),))),
           ),)
             ).toList(),
         );
