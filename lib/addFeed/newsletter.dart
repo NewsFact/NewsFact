@@ -26,10 +26,10 @@ Future<String> sendPostRequest(String name) async {
         "Upgrade-Insecure-Requests": "1",
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
         "sec-ch-ua": "\"Not A(Brand\";v=\"99\", \"Google Chrome\";v=\"121\", \"Chromium\";v=\"121\"",
-        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-mobile": "?1",
         "sec-ch-ua-platform": "\"macOS\"",
   };
-  var body = {"name": "$name on Newsfact"};
+  var body = {"name": name};
 
   try {
     var response = await http.post(
@@ -49,7 +49,6 @@ Future<String> sendPostRequest(String name) async {
     // Print or use the extracted values
     return email;
   } catch (error) {
-    print(error);
     return "Error getting email";
   }
 }
