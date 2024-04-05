@@ -35,7 +35,7 @@ class TwitterScreenState extends State<TwitterScreen> {
           if (screenName != null)
           FilledButton.tonal(onPressed: () async{
             var feeds = await FeedsHelper.feeds();
-            FeedsHelper.insertFeed(Feed(id: feeds.length + 1, url: "$instanceURL/${screenName}/rss", name: "@${screenName}"));
+            FeedsHelper.insertFeed(Feed(id: feeds.length + 1, url: "$instanceURL/${screenName}/rss", name: "@${screenName}", image: "https://twitter.com/favicon.ico"));
           }, child: Text("Import"))
         ],
       ),

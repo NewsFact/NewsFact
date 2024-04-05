@@ -34,13 +34,13 @@ class RSSScreenState extends State<RSSScreen> {
           onTap: () async{
           var feeds = await FeedsHelper.feeds();
           var name = currentFeed?.title;
-          FeedsHelper.insertFeed(Feed(id: feeds.length + 1, url: feedController.text, name: name));
+          FeedsHelper.insertFeed(Feed(id: feeds.length + 1, url: (currentFeed!.xmlLink?.href ?? feedController.text), name: name, image: currentFeed?.image?.url));
           feedController.clear();
       },
           child: Card(
           child: Padding(padding: EdgeInsets.all(8), child: Flexible(child: Row(
             children: [
-              FaviconImage(feedController.text),
+              currentFeed?.image?.url != null ? Image.network(currentFeed!.image!.url) : FaviconImage(feedController.text),
               SizedBox(width: 5,),
               Flexible(child: 
               Column(

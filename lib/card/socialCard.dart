@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsfact/utils/datetime.dart';
 import 'package:newsfact/utils/favicon.dart';
 import 'package:universal_feed/universal_feed.dart' as feed;
 import 'package:url_launcher/url_launcher.dart';
@@ -45,8 +46,8 @@ class LargeCardState extends State<NewsCard> {
                   Text(widget.author,
                       style: Theme.of(context).textTheme.labelMedium),
                   SizedBox(width: 5),
-                  if(widget.timestamp != "" && DateTime.tryParse(widget.timestamp) != null)
-                  Text(timeago.format(DateTime.parse(widget.timestamp)),
+                  if(widget.timestamp != "" && parseDateTime(widget.timestamp) != null)
+                  Text(timeago.format(parseDateTime(widget.timestamp)),
                       style: Theme.of(context).textTheme.labelMedium)
                 ],
               ),

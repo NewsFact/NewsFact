@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:newsfact/utils/datetime.dart';
 import 'package:universal_feed/universal_feed.dart';
 
 Future<UniversalFeed?> getFeed(Uri uri) async{
@@ -24,8 +25,8 @@ Future<List<Item>> getFeeds(List<Uri> uris) async {
   // Sort the allFeeds list by date published
   allFeeds.sort((a, b) {
     print("${a.title} ${a.updated.toString()}");
-    var aDateTime = DateTime.tryParse(a.published.toString()) ?? DateTime.fromMillisecondsSinceEpoch(0);
-    var bDateTime = DateTime.tryParse(b.published.toString()) ?? DateTime.fromMillisecondsSinceEpoch(0);
+    var aDateTime = parseDateTime(a.published.toString());
+    var bDateTime = parseDateTime(b.published.toString());
     return bDateTime.compareTo(aDateTime);
   });
   

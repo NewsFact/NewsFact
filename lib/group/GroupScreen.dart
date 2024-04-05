@@ -13,7 +13,7 @@ class GroupScreen extends StatelessWidget {
   
   Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(title: Text(title), actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward))],),
+    appBar: AppBar(title: Text(title), actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward)), IconButton(onPressed: () => scrollController, icon: Icon(Icons.refresh))],),
     body: FutureBuilder<List<Item>>(
         future: getFeeds(feeds),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
