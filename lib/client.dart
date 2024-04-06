@@ -3,10 +3,13 @@ import 'package:newsfact/utils/datetime.dart';
 import 'package:universal_feed/universal_feed.dart';
 
 Future<UniversalFeed?> getFeed(Uri uri) async{
-  var rssContent = await http.get(uri);
-  var feed = UniversalFeed.tryParse(rssContent.body);
-
-  return feed;
+  try {
+    var rssContent = await http.get(uri);
+    var feed = UniversalFeed.parseFromString(rssContent.body);
+    return feed;
+  } catch(e) {
+    Exception(e);
+  }
 }
 
 Future<List<Item>> getFeeds(List<Uri> uris) async {
@@ -14,8 +17,7 @@ Future<List<Item>> getFeeds(List<Uri> uris) async {
   
   // Fetch and parse feeds from each URI
   for (Uri uri in uris) {
-    var rssContent = await http.get(uri);
-    var feed = UniversalFeed.tryParse(rssContent.body);
+    UniversalFeed? feed = await getFeed(uri);
 
     if (feed?.items != null) {
       allFeeds.addAll(feed!.items); // Add parsed items to allFeeds list

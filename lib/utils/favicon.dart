@@ -20,7 +20,7 @@ class FaviconImage extends StatelessWidget {
                   Favicon favicon = snapshot.data;
                   return ClipRRect(borderRadius: BorderRadius.circular(16), child: Image.network(
                     favicon.url,
-                    width: 24,
+                    width: width ?? 32,
                   ));
                 }
           },);
