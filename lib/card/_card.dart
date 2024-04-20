@@ -16,25 +16,22 @@ class NewsCard extends StatefulWidget {
 }
 
 class LargeCardState extends State<NewsCard> {
-  
   Widget build(BuildContext context) {
     final item = widget.item;
 
         return Card(child: 
-          ListTile(
-            onTap: () => launchUrlString(item.link!.href),
-            title: Row(children: [
-              FaviconImage(item.link!.href.toString(), width: 32,),
-              Text(item.authors.toString(),
-                      style: Theme.of(context).textTheme.labelMedium),
-                  const SizedBox(width: 8.0),
-                  if(item.published != null && (parseDateTime(item.published!.value) as DateTime?) != null)
-                  Text(timeago.format(parseDateTime(item.published!.value)),
-                      style: Theme.of(context).textTheme.labelMedium)
-            ],),
-            subtitle: Column(
+          
+            Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ListTile(
+            onTap: () => launchUrlString(item.link!.href),
+            leading: FaviconImage(item.link!.href.toString(), width: 36,),
+            title: Text(item.authors.first.name,
+                      style: Theme.of(context).textTheme.labelMedium),
+                  subtitle: Text(timeago.format(parseDateTime(item.published!.value)),
+                      style: Theme.of(context).textTheme.labelMedium),
+              ),
               if(item.image != null)
                ClipRRect(
                 child: Image.network(item.image!.url, width: 100,),
@@ -54,8 +51,8 @@ class LargeCardState extends State<NewsCard> {
               )
             ],
           ),
-        ),
-      );
+        );
+      
   
   }
 }
