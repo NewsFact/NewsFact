@@ -26,7 +26,6 @@ Future<List<Item>> getFeeds(List<Uri> uris) async {
   
   // Sort the allFeeds list by date published
   allFeeds.sort((a, b) {
-    print("${a.title} ${a.updated.toString()}");
     var aDateTime = parseDateTime(a.published.toString());
     var bDateTime = parseDateTime(b.published.toString());
     return bDateTime.compareTo(aDateTime);

@@ -9,8 +9,7 @@ parseDateTime(String dateTime) {
     try {
     return format.parse(dateTime);
   } catch (e) {
-    print("Error parsing datetime: $e");
-    return DateTime.fromMillisecondsSinceEpoch(0);
+    return Exception("Error parsing datetime: $e");
   }
   }
 }

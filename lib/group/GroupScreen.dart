@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsfact/client.dart';
-import 'package:newsfact/card/card.dart';
+import 'package:newsfact/card/_card.dart';
 import 'package:newsfact/dataStore/database_classes.dart';
 import 'package:universal_feed/universal_feed.dart';
 
@@ -35,12 +35,8 @@ class GroupScreen extends StatelessWidget {
                   var item = rssFeed[index];
 
                   return NewsCard(
-                    item.image?.url ?? item.image?.link ?? item.image?.title,
-                    (item.title ?? item.description) ?? "",
-                    item.authors.isNotEmpty ? item.authors.first.name : "",
-                    item.published!.value,
-                    Uri.parse(item.links.first.href),
-                    smallImage: (index % 5) == 0,
+                    item
+                    
                   );
                   }
               );

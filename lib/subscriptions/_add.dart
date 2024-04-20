@@ -43,7 +43,6 @@ Widget buildListTile(BuildContext context, String title, Widget? image, Widget s
 
 void addFeed(feedURL, name, image) async {
     var feeds = await FeedsHelper.feeds();
-    print(feeds.length);
     FeedsHelper.insertFeed(
       Feed(
         id: feeds.length + 1,
@@ -76,7 +75,7 @@ class _SocialImportState extends State<SocialImport> {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(title: AppBar(title: Text("Add Feed")), content: SingleChildScrollView(
+    return AlertDialog(title: Text("Add from ${widget.type}"), content: SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -84,13 +83,11 @@ class _SocialImportState extends State<SocialImport> {
           TextField(
             controller: _screenName,
             decoration: InputDecoration(
-              hintText: "Enter your username",
+              hintText: "Enter a username",
               prefixText: '@',
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-              suffixIcon: IconButton(
-            onPressed: () => addFeed(_instanceURL.text.isNotEmpty ? "$_instanceURL/${_screenName.text}/rss": "https://nitter.privacydev.net/${_screenName.text}/rss", _screenName.text, "https://twitter.com/favicon.ico"),
-            icon: Icon(Icons.arrow_forward_ios),
-          )
+              
+          
             ),
           ),
           if (widget.type == 'twitter')
@@ -108,7 +105,13 @@ class _SocialImportState extends State<SocialImport> {
           ),
         ],
       ),
-    ));
+    ),
+    actionsAlignment: MainAxisAlignment.center,
+      actions: [
+        TextButton(onPressed: () {if (_screenName.text != "") addFeed(_instanceURL.text.isNotEmpty ? "$_instanceURL/${_screenName.text}/rss": "https://nitter.privacydev.net/${_screenName.text}/rss", _screenName.text, "https://twitter.com/favicon.ico");}, child: Text("Add feed", style: TextStyle(color: _screenName.text == "" ? Theme.of(context).disabledColor : Theme.of(context).buttonTheme.colorScheme?.primary),)),
+        TextButton(onPressed: () => Navigator.pop(context), child: Text("Cancel"))
+      ],
+    );
   }
 }
 
@@ -183,7 +186,6 @@ Future<String?> sendPostRequest(String name) async {
 
     var email = emailElement?.text ?? 'Email not found';
 
-    // Print or use the extracted values
     return email;
   } catch (e) {
     Exception(e);
