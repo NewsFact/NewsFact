@@ -44,7 +44,7 @@ class LargeCardState extends State<NewsCard> {
               if (item.title != null)
               Text(item.title!, style: Theme.of(context).textTheme.titleMedium, maxLines: 2, overflow: TextOverflow.ellipsis,),
               if (item.description != null)
-              Html(data: item.description!),
+              Html(data: item.description!, onLinkTap: (String? link, _, __) => launchUrl(Uri.parse(link!)), shrinkWrap: true,),
               SingleChildScrollView(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
