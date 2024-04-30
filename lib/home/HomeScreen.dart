@@ -37,7 +37,7 @@ class _ScaffoldWithBottomNavigationState extends State<ScaffoldWithBottomNavigat
         destinations: const [
           NavigationDestination(icon: Icon(Icons.rss_feed), label: "Feed",), 
           NavigationDestination(selectedIcon: Icon(Icons.subscriptions), icon: Icon(Icons.subscriptions_outlined), label: "Subscriptions",),
-          NavigationDestination(selectedIcon: Icon(Icons.bookmark), icon: Icon(Icons.bookmark_outline,), label: "Saved",)
+          //NavigationDestination(selectedIcon: Icon(Icons.bookmark), icon: Icon(Icons.bookmark_outline,), label: "Saved",)
         ],
         onDestinationSelected: (value) => setState(() {
           pageIndex = value;

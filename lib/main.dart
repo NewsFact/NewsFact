@@ -4,8 +4,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 
 import 'package:newsfact/home/HomeScreen.dart';
-import 'package:newsfact/subscriptions/SubscriptionsScreen.dart';
-import 'package:newsfact/saved/SavedScreen.dart';
 
 void main() {
   runApp(const MyApp());
