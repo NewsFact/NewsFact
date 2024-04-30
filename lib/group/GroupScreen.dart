@@ -17,7 +17,9 @@ class GroupScreen extends StatelessWidget {
     appBar: AppBar(
       title: Text(title),
       leading: Icon(icon ?? Icons.rss_feed),
-     actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward)), IconButton(onPressed: () => scrollController, icon: Icon(Icons.refresh))],),
+     actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward)), 
+     //IconButton(onPressed: () => scrollController, icon: Icon(Icons.refresh))
+     ],),
     body: FutureBuilder<List<Item>>(
         future: getFeeds(feeds),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
