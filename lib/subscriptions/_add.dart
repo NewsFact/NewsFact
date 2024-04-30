@@ -5,6 +5,7 @@ import 'package:newsfact/dataStore/database_classes.dart';
 import 'package:newsfact/dataStore/database_helper.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as htmlParser;
+import 'package:simple_icons/simple_icons.dart';
 import 'package:universal_feed/universal_feed.dart' as universal_feed;
 
 Future<void> addDialog(BuildContext context) {
@@ -16,8 +17,8 @@ Future<void> addDialog(BuildContext context) {
         content: Column(
           mainAxisSize: MainAxisSize.min,
         children: [
-          buildListTile(context, "Twitter", Image.asset('assets/social_icons/twitter.png', width: 20, color: Theme.of(context).colorScheme.onBackground), SocialImport('twitter')),
-          buildListTile(context, "Mastodon", Image.asset('assets/social_icons/mastodon.png', width: 20, color: Theme.of(context).colorScheme.onBackground), SocialImport('mastodon')),
+          buildListTile(context, "Twitter", const Icon(SimpleIcons.twitter), SocialImport('twitter')),
+          buildListTile(context, "Mastodon", const Icon(SimpleIcons.mastodon), SocialImport('mastodon')),
           buildListTile(context, "Newsletter", const Icon(Icons.email) ,NewsletterScreen()),
           buildListTile(context, "RSS", const Icon(Icons.rss_feed), RSSScreen()),
         ]),
