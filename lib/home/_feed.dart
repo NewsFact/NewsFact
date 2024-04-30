@@ -4,6 +4,7 @@ import 'package:newsfact/dataStore/database_helper.dart';
 import 'package:newsfact/dataStore/database_classes.dart';
 import 'package:newsfact/group/GroupScreen.dart';
 import 'package:newsfact/subscriptions/SubscriptionsScreen.dart';
+import 'package:simple_icons/simple_icons.dart';
 
 class FeedScreen extends StatefulWidget {
   final ScrollController scrollController;
@@ -21,7 +22,7 @@ class FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
     return FutureBuilder<List<Feed>>(future: FeedsHelper.feeds(), builder: (BuildContext c, AsyncSnapshot<dynamic> snapshot) {
       if (snapshot.connectionState == ConnectionState.done) {
         List<Feed> feeds = snapshot.data;
-        return GroupScreen(title: 'Feed', feeds: feeds.map((e) => Uri.parse(e.url)).toList(), scrollController: widget.scrollController);
+        return GroupScreen(title: 'Feed', icon: Icons.rss_feed, feeds: feeds.map((e) => Uri.parse(e.url)).toList(), scrollController: widget.scrollController);
 
                   
                 
