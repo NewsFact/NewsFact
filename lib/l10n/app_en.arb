@@ -1,0 +1,6 @@
+{
+  "newsfact": "NewsFact",
+  "@newsfact": {
+    "description": "A news reader powered by RSS & AI"
+  }
+}
