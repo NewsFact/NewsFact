@@ -9,7 +9,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pages = [FeedScreen(scrollController: scrollController), 
-  FeedsScreen(), SavedScreen()];
+  FeedsScreen(), //SavedScreen()
+  ];
 
     return ScaffoldWithBottomNavigation(pages: _pages, scrollController: scrollController,);
   }
@@ -26,22 +27,41 @@ class ScaffoldWithBottomNavigation extends StatefulWidget {
 
 class _ScaffoldWithBottomNavigationState extends State<ScaffoldWithBottomNavigation> {
   int pageIndex = 0;
-  
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController(initialPage: pageIndex);
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: widget.pages[pageIndex],
+      body: PageView(
+        controller: pageController,
+        children: widget.pages, 
+        onPageChanged: (int pageValue) => setState(() => pageIndex = pageValue),
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: pageIndex,
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.rss_feed), label: "Feed",), 
-          NavigationDestination(selectedIcon: Icon(Icons.subscriptions), icon: Icon(Icons.subscriptions_outlined), label: "Subscriptions",),
-          //NavigationDestination(selectedIcon: Icon(Icons.bookmark), icon: Icon(Icons.bookmark_outline,), label: "Saved",)
+          NavigationDestination(icon: Icon(Icons.rss_feed), label: "Feed"), 
+          NavigationDestination(selectedIcon: Icon(Icons.subscriptions), icon: Icon(Icons.subscriptions_outlined), label: "Subscriptions"),
+          //NavigationDestination(selectedIcon: Icon(Icons.bookmark), icon: Icon(Icons.bookmark_outline), label: "Saved")
         ],
-        onDestinationSelected: (value) => setState(() {
-          pageIndex = value;
-        }),
+        onDestinationSelected: (value) {
+          pageController.animateToPage(value, duration: Duration(milliseconds: 300), curve: Curves.ease);
+          setState(() {
+            pageIndex = value;
+          });
+        },
       ),
     );
   }
