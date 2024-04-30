@@ -18,7 +18,7 @@ Future<void> addDialog(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
         children: [
           buildListTile(context, "Twitter", const Icon(SimpleIcons.twitter), SocialImport('twitter')),
-          buildListTile(context, "Mastodon", const Icon(SimpleIcons.mastodon), SocialImport('mastodon')),
+          //buildListTile(context, "Mastodon", const Icon(SimpleIcons.mastodon), SocialImport('mastodon')),
           buildListTile(context, "Newsletter", const Icon(Icons.email) ,NewsletterScreen()),
           buildListTile(context, "RSS", const Icon(Icons.rss_feed), RSSScreen()),
         ]),
