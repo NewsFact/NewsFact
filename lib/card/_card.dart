@@ -46,7 +46,7 @@ class LargeCardState extends State<NewsCard> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                  BookmarkButton()
+                  //BookmarkButton()
                 ],),
               )
             ],
