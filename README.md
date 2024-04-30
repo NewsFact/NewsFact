@@ -14,5 +14,8 @@ A news reader powered by RSS & AI
   <a href="https://github.com/mrhcjones/NewsFact/actions" alt="Build Status"><img src="https://img.shields.io/github/actions/workflow/status/mrhcjones/NewsFact/ci.yml"></a>
 </p>
 
-> [!WARNING]  
-> I ([@TheHCJ](https://github.com/TheHCJ)) will not provide release APK's until this application is ready for public release
+## Features
+- [x] View all your feeds in one place
+- [x] Add feeds from Twitter/X
+- [x] Add feeds from Newsletters
+- [x] Add feeds from RSS
