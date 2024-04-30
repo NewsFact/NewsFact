@@ -21,12 +21,7 @@ class FeedScreenState extends State<FeedScreen> with TickerProviderStateMixin {
     return FutureBuilder<List<Feed>>(future: FeedsHelper.feeds(), builder: (BuildContext c, AsyncSnapshot<dynamic> snapshot) {
       if (snapshot.connectionState == ConnectionState.done) {
         List<Feed> feeds = snapshot.data;
-        if (feeds.isEmpty == false)
-        {
-          return GroupScreen(title: 'Feed', feeds: feeds.map((e) => Uri.parse(e.url)).toList(), scrollController: widget.scrollController);
-        } else {
-          return Center(child: Text("No feeds found"),);
-        }
+        return GroupScreen(title: 'Feed', feeds: feeds.map((e) => Uri.parse(e.url)).toList(), scrollController: widget.scrollController);
 
                   
                 
