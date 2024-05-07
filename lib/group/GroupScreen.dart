@@ -12,11 +12,12 @@ class GroupScreen extends StatelessWidget {
 
   const GroupScreen({super.key, required this.title, this.icon, required this.feeds, this.scrollController});
   
+  @override
   Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
       title: Text(title),
-      leading: Icon(icon ?? Icons.rss_feed),
+      leading: Icon(icon),
      actions: [IconButton(onPressed: () => scrollController?.animateTo(0, duration: Durations.medium1, curve: Curves.fastLinearToSlowEaseIn), icon: Icon(Icons.arrow_upward)), 
      //IconButton(onPressed: () => scrollController, icon: Icon(Icons.refresh))
      ],),
