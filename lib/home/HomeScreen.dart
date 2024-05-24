@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsfact/home/_feed.dart';
-import 'package:newsfact/saved/SavedScreen.dart';
-import 'package:newsfact/subscriptions/SubscriptionsScreen.dart';
+import 'package:feedify/home/_feed.dart';
+import 'package:feedify/saved/SavedScreen.dart';
+import 'package:feedify/subscriptions/SubscriptionsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   final ScrollController scrollController = ScrollController();

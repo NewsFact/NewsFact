@@ -1,10 +1,10 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:favicon/favicon.dart';
 import 'package:flutter/material.dart';
-import 'package:newsfact/dataStore/database_classes.dart';
-import 'package:newsfact/dataStore/database_helper.dart';
-import 'package:newsfact/group/GroupScreen.dart';
-import 'package:newsfact/utils/favicon.dart';
+import 'package:feedify/dataStore/database_classes.dart';
+import 'package:feedify/dataStore/database_helper.dart';
+import 'package:feedify/group/GroupScreen.dart';
+import 'package:feedify/utils/favicon.dart';
 
 class FeedsList extends StatefulWidget {
   const FeedsList({super.key});

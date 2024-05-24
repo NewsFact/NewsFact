@@ -1,6 +1,6 @@
 {
-  "newsfact": "NewsFact",
-  "@newsfact": {
-    "description": "A news reader powered by RSS & AI"
+  "feedify": "Feedify",
+  "@feedify": {
+    "description": "A clean and modern feed reader"
   }
 }

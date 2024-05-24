@@ -1,6 +1,6 @@
  import 'dart:async';
 import 'package:flutter/widgets.dart';
-import 'package:newsfact/dataStore/database_classes.dart';
+import 'package:feedify/dataStore/database_classes.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -9,7 +9,7 @@ class DatabaseHelper {
     WidgetsFlutterBinding.ensureInitialized();
 
     return openDatabase(
-      join(await getDatabasesPath(), 'newsfact.db'),
+      join(await getDatabasesPath(), 'feedify.db'),
       onCreate: (db, version) {
         db.execute(
           'CREATE TABLE feeds(id INTEGER PRIMARY KEY, type TEXT, url TEXT, name TEXT, image TEXT)',

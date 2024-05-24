@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:newsfact/utils/datetime.dart';
-import 'package:newsfact/utils/favicon.dart';
+import 'package:feedify/utils/datetime.dart';
+import 'package:feedify/utils/favicon.dart';
 import 'package:universal_feed/universal_feed.dart' show Item;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:timeago/timeago.dart' as timeago;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:newsfact/subscriptions/_add.dart';
-import 'package:newsfact/subscriptions/_list.dart';
+import 'package:feedify/subscriptions/_add.dart';
+import 'package:feedify/subscriptions/_list.dart';
 
 class FeedsScreen extends StatefulWidget {
   State<FeedsScreen> createState() => FeedsScreenState();

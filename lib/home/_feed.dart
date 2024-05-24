@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsfact/client.dart';
-import 'package:newsfact/dataStore/database_helper.dart';
-import 'package:newsfact/dataStore/database_classes.dart';
-import 'package:newsfact/group/GroupScreen.dart';
-import 'package:newsfact/subscriptions/SubscriptionsScreen.dart';
+import 'package:feedify/client.dart';
+import 'package:feedify/dataStore/database_helper.dart';
+import 'package:feedify/dataStore/database_classes.dart';
+import 'package:feedify/group/GroupScreen.dart';
+import 'package:feedify/subscriptions/SubscriptionsScreen.dart';
 import 'package:simple_icons/simple_icons.dart';
 
 class FeedScreen extends StatefulWidget {

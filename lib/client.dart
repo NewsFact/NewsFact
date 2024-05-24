@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:newsfact/utils/datetime.dart';
+import 'package:feedify/utils/datetime.dart';
 import 'package:universal_feed/universal_feed.dart';
 
 Future<UniversalFeed?> getFeed(Uri uri) async{

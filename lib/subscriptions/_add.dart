@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:newsfact/client.dart';
-import 'package:newsfact/dataStore/database_classes.dart';
-import 'package:newsfact/dataStore/database_helper.dart';
+import 'package:feedify/client.dart';
+import 'package:feedify/dataStore/database_classes.dart';
+import 'package:feedify/dataStore/database_helper.dart';
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as htmlParser;
 import 'package:simple_icons/simple_icons.dart';

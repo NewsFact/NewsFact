@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsfact/client.dart';
-import 'package:newsfact/card/_card.dart';
-import 'package:newsfact/dataStore/database_classes.dart';
+import 'package:feedify/client.dart';
+import 'package:feedify/card/_card.dart';
+import 'package:feedify/dataStore/database_classes.dart';
 import 'package:universal_feed/universal_feed.dart';
 
 class GroupScreen extends StatelessWidget {
